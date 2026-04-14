@@ -33,6 +33,14 @@ export class UserService {
     return await this.userRepository.save(newUser);
   }
 
+  findByEmail(email: string) {
+    return this.userRepository.findOneBy({ email });
+  }
+
+  save(user: User) {
+    return this.userRepository.save(user);
+  }
+
   findAll() {
     return `This action returns all user`;
   }
